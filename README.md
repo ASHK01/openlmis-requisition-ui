@@ -1,3 +1,8 @@
+start requisition ui
+* cd /home/aamir/main/lmis/code-base/openlmis-requisition-ui
+* sudo docker-compose run --service-ports requisition-ui
+* grunt --serve --openlmisServerURL=http://172.17.0.1 --force
+
 # OpenLMIS Requisition UI Module
 This repository is the UI for the [OpenLMIS Requisition Service.](https://github.com/OpenLMIS/openlmis-requisition)
 
