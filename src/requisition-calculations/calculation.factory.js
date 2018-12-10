@@ -46,7 +46,8 @@
             //Q = TEMPLATE_COLUMNS.TOTAL_COST,
             S = TEMPLATE_COLUMNS.CALCULATED_ORDER_QUANTITY_ISA,
             T = TEMPLATE_COLUMNS.PRICE_PER_PACK,
-            Z = TEMPLATE_COLUMNS.ADDITIONAL_QUANTITY_REQUIRED;
+            Z = TEMPLATE_COLUMNS.ADDITIONAL_QUANTITY_REQUIRED,
+        	AA = TEMPLATE_COLUMNS.MOS;
         //V = TEMPLATE_COLUMNS.PACKS_TO_SHIP,
         //Y = TEMPLATE_COLUMNS.TOTAL;
 
@@ -62,10 +63,33 @@
             maximumStockQuantity: calculateMaximumStockQuantity,
             averageConsumption: calculateAverageConsumption,
             calculatedOrderQuantityIsa: calculatedOrderQuantityIsa,
-            getOrderQuantity: getOrderQuantity
+            getOrderQuantity: getOrderQuantity,
+            mos: getMos
         };
         return calculationFactory;
 
+
+        /**
+         * @ngdoc method
+         * @methodOf requisition-calculations.calculationFactory
+         * @name totalConsumedQuantity
+         *
+         * @description
+         * Calculates the value of the Total Consumed Quantity column based on the given line item.
+         *
+         * @param  {Object} lineItem the line item to calculate the value from
+         * @return {Number}          the calculated Total Consumed Quantity value
+         */
+        function getMos(lineItem) {
+        	var stockOnHandTemp = getItem(lineItem, E);
+        	var avgConsumptionTemp = getItem(lineItem, P);
+        	if(stockOnHandTemp && avgConsumptionTemp && avgConsumptionTemp != 0) {
+        		var result = stockOnHandTemp / avgConsumptionTemp;
+        		return Math.round(result * 10) / 10;
+        	}
+        	return  0;
+        }
+        
         /**
          * @ngdoc method
          * @methodOf requisition-calculations.calculationFactory

@@ -29,6 +29,7 @@
         .constant('TEMPLATE_COLUMNS', columns());
 
     function columns() {
+    console.log('test');
         return {
             APPROVED_QUANTITY: 'approvedQuantity',
             BEGINNING_BALANCE: 'beginningBalance',
@@ -36,6 +37,7 @@
             REQUESTED_QUANTITY: 'requestedQuantity',
             REQUESTED_QUANTITY_EXPLANATION: 'requestedQuantityExplanation',
             STOCK_ON_HAND: 'stockOnHand',
+            MOS: 'mos',
             SKIPPED: 'skipped',
             TOTAL_RECEIVED_QUANTITY: 'totalReceivedQuantity',
             TOTAL_CONSUMED_QUANTITY: 'totalConsumedQuantity',

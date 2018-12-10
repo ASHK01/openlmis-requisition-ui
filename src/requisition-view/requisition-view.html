@@ -10,20 +10,7 @@
 <status-messages requisition="vm.requisition"></status-messages>
 <nav>
     <ul>
-        <li ui-sref-active="active" role="presentation"
-            ng-class="{'is-invalid': !vm.isFullSupplyTabValid()}"
-            popover="{{vm.invalidFullSupply}}">
-            <a ui-sref="openlmis.requisitions.requisition.fullSupply">
-                {{'requisitionView.fullSupplyProducts' | message}}
-            </a>
-        </li>
-        <li ui-sref-active="active" ng-if="vm.requisition.program.showNonFullSupplyTab"
-            role="presentation" ng-class="{'is-invalid': !vm.isNonFullSupplyTabValid()}"
-            popover="{{vm.invalidNonFullSupply}}">
-            <a ui-sref="openlmis.requisitions.requisition.nonFullSupply">
-                {{'requisitionView.nonFullSupplyProducts' | message}}
-            </a>
-        </li>
+        
     </ul>
 </nav>
 <div ui-view=""></div>

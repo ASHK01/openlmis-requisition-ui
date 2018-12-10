@@ -579,6 +579,7 @@
         function addLineItems(orderables) {
             var requisition = this;
             orderables.forEach(function(orderable) {
+            console.log('aamir:',orderable);
                 requisition.addLineItem(orderable);
             });
         }

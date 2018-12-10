@@ -141,6 +141,7 @@
         function onInit() {
             vm.lineItems = lineItems;
             vm.requisition = requisition;
+            columns[11].source = 'USER_INPUT';
             vm.columns = columns;
             vm.userCanEdit = canAuthorize || canSubmit;
             vm.showAddFullSupplyProductsButton = showAddFullSupplyProductsButton();

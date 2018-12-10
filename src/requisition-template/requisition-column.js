@@ -106,6 +106,10 @@
             calculatedOrderQuantity: [
                 TEMPLATE_COLUMNS.MAXIMUM_STOCK_QUANTITY,
                 TEMPLATE_COLUMNS.STOCK_ON_HAND
+            ],
+            mos: [
+            	TEMPLATE_COLUMNS.STOCK_ON_HAND,
+            	TEMPLATE_COLUMNS.AVERAGE_CONSUMPTION
             ]
         };
 
